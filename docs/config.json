@@ -2,6 +2,39 @@
   "config": [
     {
       "type": "link",
+      "key": "deployment",
+      "slug": "deployment",
+      "title": "Deployment",
+      "position": 1,
+      "id": "15",
+      "children": [
+        {
+          "key": "./deployment/basics.md",
+          "slug": "deployment/basics",
+          "type": "link",
+          "title": "Basics",
+          "id": "16"
+        },
+        {
+          "type": "group",
+          "key": "Complement",
+          "title": "Complement",
+          "position": null,
+          "id": "17",
+          "children": [
+            {
+              "key": "./deployment/complement-1.md",
+              "slug": "deployment/complement-1",
+              "type": "link",
+              "title": "Subpage",
+              "id": "18"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "link",
       "key": "getting-started",
       "slug": "getting-started",
       "title": "Getting Started",
@@ -68,39 +101,6 @@
           "title": "Node",
           "id": "14",
           "children": []
-        }
-      ]
-    },
-    {
-      "type": "link",
-      "key": "deployment",
-      "slug": "deployment",
-      "title": "Deployment",
-      "position": 1,
-      "id": "15",
-      "children": [
-        {
-          "key": "./deployment/basics.md",
-          "slug": "deployment/basics",
-          "type": "link",
-          "title": "Basics",
-          "id": "16"
-        },
-        {
-          "type": "group",
-          "key": "Complement",
-          "title": "Complement",
-          "position": null,
-          "id": "17",
-          "children": [
-            {
-              "key": "./deployment/complement-1.md",
-              "slug": "deployment/complement-1",
-              "type": "link",
-              "title": "Subpage",
-              "id": "18"
-            }
-          ]
         }
       ]
     }
