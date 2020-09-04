@@ -2,9 +2,9 @@
 date: '2019-07-10T07:00:00.000Z'
 title: Getting Started
 position: 0
-last_edited: '2020-08-19T11:03:57.348Z'
+last_edited: '2020-09-04T21:26:40.132Z'
 ---
-Tina Starter Alpaca is a NextJS documentation responsive theme, customizable, and hosted on Vercel.
+SOME NEW TEXT
 
 Go to [https://tina-starter-alpaca.now.sh](https://tina-starter-alpaca.now.sh/ "https://tina-starter-alpaca.now.sh/") to give it a spin. You can edit your content from the website just like on tinacms.org.
 
