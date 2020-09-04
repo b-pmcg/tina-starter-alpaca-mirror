@@ -2,6 +2,13 @@
   "config": [
     {
       "type": "link",
+      "slug": "features/Arch",
+      "title": "A New Page for Nav",
+      "children": [],
+      "id": "jp13cyw8c"
+    },
+    {
+      "type": "link",
       "key": "deployment",
       "slug": "deployment",
       "title": "Deployment",
