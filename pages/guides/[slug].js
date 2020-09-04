@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 import { useGithubMarkdownForm } from 'react-tinacms-github';
 import { getGithubPreviewProps, parseMarkdown } from 'next-tinacms-github';
 import { InlineWysiwyg } from 'react-tinacms-editor';
-import { jsx, Flex, NavLink, Box, Link as ThemeLink, Text } from 'theme-ui';
+import { jsx, Button, Flex, NavLink, Box, Link as ThemeLink, Text } from 'theme-ui';
 
 import Head from '@components/head';
 // import Layout from '@components/layout';
@@ -98,6 +98,7 @@ const BlogPage = (props) => {
         {/* <PostFeedback /> */}
         {/* </DocWrapper> */}
       </InlineForm>
+      <EditLink />
     </GuidesLayout>
     // </Layout>
   );
@@ -152,13 +153,23 @@ const BlogPage = (props) => {
 //   );
 // };
 
+export const EditLink = () => {
+  const cms = useCMS();
+  return (
+    <Button onClick={() => cms.toggle()}>
+      <i className="icon-edit" />
+      {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site With TinaCMS'}
+    </Button>
+  );
+};
+
 /**
  * Fetch data with getStaticProps based on 'preview' mode
  */
 export const getStaticProps = async function ({ preview, previewData, params }) {
   const { slug } = params;
   const fileRelativePath = `content/resources/guides/${slug}.md`;
-  let Alltocs = '';
+  // let Alltocs = '';
 
   let posts = await getGuides();
   if (preview) {
@@ -167,13 +178,13 @@ export const getStaticProps = async function ({ preview, previewData, params }) 
       fileRelativePath,
       parse: parseMarkdown,
     });
-    if (typeof window === 'undefined') {
-      Alltocs = createToc(previewProps.props.file.data.markdownBody);
-    }
+    // if (typeof window === 'undefined') {
+    //   Alltocs = createToc(previewProps.props.file.data.markdownBody);
+    // }
     return {
       props: {
         posts,
-        Alltocs,
+        // Alltocs,
         previewURL: `https://raw.githubusercontent.com/${previewData.working_repo_full_name}/${previewData.head_branch}`,
         ...previewProps.props,
       },
@@ -183,13 +194,13 @@ export const getStaticProps = async function ({ preview, previewData, params }) 
   const content = await import(`../../content/resources/guides/${slug}.md`);
   const data = matter(content.default);
 
-  if (typeof window === 'undefined') {
-    Alltocs = createToc(data.content);
-  }
+  // if (typeof window === 'undefined') {
+  //   Alltocs = createToc(data.content);
+  // }
   return {
     props: {
       posts,
-      Alltocs,
+      // Alltocs,
       sourceProvider: null,
       error: null,
       preview: false,

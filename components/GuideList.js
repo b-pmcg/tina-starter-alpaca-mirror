@@ -2,7 +2,7 @@
 import { jsx, Card, Heading, Text, Box, Flex } from 'theme-ui';
 import Link from 'next/link';
 
-const GuideList = ({ guides }) => {
+const GuideList = ({ guides, title = 'Guides', subtitle = 'See our featured guides' }) => {
   return (
     <Flex
       sx={{
@@ -10,8 +10,8 @@ const GuideList = ({ guides }) => {
       }}
     >
       <Box>
-        <Heading>Guides</Heading>
-        <Text>text goes here</Text>
+        <Heading>{title}</Heading>
+        <Text>{subtitle}</Text>
         <Flex>
           {guides.map(
             ({

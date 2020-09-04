@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import styled from 'styled-components';
 import { getGithubPreviewProps, parseJson } from 'next-tinacms-github';
 import { useGithubJsonForm } from 'react-tinacms-github';
 import Router from 'next/router';
@@ -7,10 +5,6 @@ import SingleLayout from '../layouts/SingleLayout.js';
 import GuideList from '../components/GuideList';
 import { Container, jsx, Card, Heading, Text, Grid, Box, Flex } from 'theme-ui';
 import { createToc, getGuides } from '@utils';
-
-// import Head from "@components/head"
-// import Layout from "@components/layout"
-// import Container from "@components/container"
 import { usePlugin } from 'tinacms';
 import getGlobalStaticProps from '../utils/getGlobalStaticProps';
 import { useGlobalStyleForm } from '@hooks';
@@ -38,27 +32,10 @@ const Page = ({ file, preview, styleFile, guides }) => {
 
   return (
     <SingleLayout>
-      {/* <Title className="title">{data.title}</Title> */}
       <GuideList guides={initialGuides} />
     </SingleLayout>
   );
-  // return (
-  //   <Layout form={form} theme={styleData}>
-  //     <Head title="Home" />
-  //     <Container className="container">
-  //       <Title className="title">{data.title}</Title>
-  //       <p className="description">
-  //         To get started, edit <code>pages/index.js</code> and save to reload.
-  //       </p>
-  //     </Container>
-  //   </Layout>
-  // )
 };
-
-// const Title = styled.h1`
-//   font-size: 50px;
-//   color: ${({ theme }) => theme.colors.primary};
-// `
 
 /**
  * Fetch data with getStaticProps based on 'preview' mode
@@ -85,7 +62,6 @@ export const getStaticProps = async function ({ preview, previewData }) {
       },
     };
   }
-  // console.log('^^^guides', guides);
   return {
     props: {
       sourceProvider: null,
