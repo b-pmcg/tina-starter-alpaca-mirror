@@ -3,7 +3,7 @@ import App from 'next/app';
 import { ThemeProvider } from 'theme-ui';
 import { TinaProvider, TinaCMS } from 'tinacms';
 import { TinacmsGithubProvider, GithubMediaStore } from 'react-tinacms-github';
-import { Normalize } from 'styled-normalize';
+// import { Normalize } from 'styled-normalize';
 import { AlpacaGitHubClient } from '../utils/githubClient';
 // import { GithubClient } from "react-tinacms-github"
 // eslint-disable-next-line no-undef
@@ -48,7 +48,7 @@ class MyApp extends App {
             onLogout={exitEditMode}
             error={pageProps.error}
           >
-            <Normalize />
+            {/* <Normalize /> */}
             <Component {...pageProps} />
           </TinacmsGithubProvider>
         </TinaProvider>

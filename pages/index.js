@@ -14,15 +14,14 @@ import { createToc, getGuides } from '@utils';
 import { usePlugin } from 'tinacms';
 import getGlobalStaticProps from '../utils/getGlobalStaticProps';
 import { useGlobalStyleForm } from '@hooks';
+import { default as featGuides } from '../data/featuredGuides.json';
 
 const Page = ({ file, preview, styleFile, guides }) => {
-  // can remove this if you want to use the index page
-  // useEffect(() => {
-  //   const { pathname } = Router
-  //   if (pathname == "/") {
-  //     Router.push("/docs")
-  //   }
-  // })
+  const initialGuides = guides.filter((g) => {
+    const idx = featGuides.indexOf(g.data.frontmatter.slug);
+    if (idx !== -1) return g.data.frontmatter.slug === featGuides[idx];
+  });
+
   const formOptions = {
     label: 'home page',
     fields: [
@@ -40,7 +39,7 @@ const Page = ({ file, preview, styleFile, guides }) => {
   return (
     <SingleLayout>
       {/* <Title className="title">{data.title}</Title> */}
-      <GuideList guides={guides} />
+      <GuideList guides={initialGuides} />
     </SingleLayout>
   );
   // return (

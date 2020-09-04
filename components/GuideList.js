@@ -16,7 +16,7 @@ const GuideList = ({ guides }) => {
           {guides.map(
             ({
               data: {
-                frontmatter: { title, description },
+                frontmatter: { title, slug, description },
               },
             }) => {
               return (
@@ -26,9 +26,10 @@ const GuideList = ({ guides }) => {
                     mr: 3,
                   }}
                 >
-                  {/* <Link key={title} href={`/guides/${slug}/`}> */}
-                  <Link key={title} href={`/guides/`}>
-                    <Heading as="a">{title}</Heading>
+                  <Link key={title} href={`/guides/${slug}/`}>
+                    <Heading as="a" sx={{ cursor: 'pointer' }}>
+                      {title}
+                    </Heading>
                   </Link>
                   <Text>{description}</Text>
                 </Card>

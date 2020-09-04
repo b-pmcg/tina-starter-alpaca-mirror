@@ -41,6 +41,7 @@ const GetGuides = async (preview, previewData, contentDir) => {
           frontmatter: {
             description: data.data.description || '',
             title: data.data.title,
+            slug: data.data.slug,
             date: data.data.date || '',
             author: data.data.author || '',
           },
