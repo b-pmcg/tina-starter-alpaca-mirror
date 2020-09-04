@@ -1,26 +1,27 @@
-const path = require("path")
-const withSvgr = require("next-svgr")
-require("dotenv").config()
+const path = require('path');
+const withSvgr = require('next-svgr');
+require('dotenv').config();
 
 module.exports = withSvgr({
   webpack: (config) => {
     config.node = {
-      fs: "empty",
-    }
+      fs: 'empty',
+    };
     config.module.rules.push({
       test: /\.md$/,
-      use: "raw-loader",
-    })
+      use: 'raw-loader',
+    });
 
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@components": path.resolve(__dirname, "./components"),
-      "@utils": path.resolve(__dirname, "./utils"),
-      "@docs": path.resolve(__dirname, "./docs"),
-      "@hooks": path.resolve(__dirname, "./hooks"),
-    }
+      '@components': path.resolve(__dirname, './components'),
+      '@layouts': path.resolve(__dirname, './layouts'),
+      '@utils': path.resolve(__dirname, './utils'),
+      '@docs': path.resolve(__dirname, './docs'),
+      '@hooks': path.resolve(__dirname, './hooks'),
+    };
 
-    return config
+    return config;
   },
   env: {
     GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
@@ -30,4 +31,4 @@ module.exports = withSvgr({
     ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
     FEEDBACK_ENDPOINT: process.env.FEEDBACK_ENDPOINT,
   },
-})
+});
