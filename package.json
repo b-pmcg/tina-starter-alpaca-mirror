@@ -18,6 +18,9 @@
   "author": "Bejamas",
   "license": "ISC",
   "dependencies": {
+    "@makerdao/dai-ui-icons": "^0.0.62",
+    "@makerdao/dai-ui-icons-branding": "^0.0.62",
+    "@makerdao/dai-ui-theme-maker-neue": "^0.0.62",
     "@tinacms/api-git": "^0.7.0",
     "@tinacms/git-client": "^0.24.0",
     "@zeit/next-sass": "^1.0.1",
@@ -25,6 +28,7 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "eslint-plugin-react-hooks": "^4.1.0",
     "express": "^4.17.1",
     "fast-glob": "^3.2.2",
     "file-loader": "^6.0.0",
@@ -52,6 +56,7 @@
     "slugify": "^1.4.0",
     "styled-components": "^5.1.1",
     "styled-normalize": "^8.0.7",
+    "theme-ui": "^0.3.1",
     "tinacms": "^0.29.0",
     "typeface-source-code-pro": "^1.1.3"
   },
